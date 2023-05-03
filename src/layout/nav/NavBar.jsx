@@ -1,8 +1,14 @@
 import styles from './NavBar.module.css'
 import { Link } from 'react-router-dom'
 import {HiOutlineLocationMarker , HiOutlineSearch ,HiOutlineShoppingCart} from 'react-icons/hi'
-
+import { useState } from 'react'
+import {useSelector} from 'react-redux'
 const NavBar = () => {
+  const [search , setSearch] = useState('');
+  const count = useSelector((state) => state.cartItem.totalQuantity)
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value)
+  }
   return (
     <div className={`${styles['nav-belt']} position-static`}>
 
@@ -29,7 +35,7 @@ const NavBar = () => {
         <div className={styles['nav-search']}>
            <form >
               <div className={styles['nav-search-field ']}>
-                <input type="text" placeholder='Search' />
+                <input type="text" placeholder='Search' value={search} onChange={handleSearchChange}/>
               </div>
               <div>
                 <button>
@@ -41,7 +47,7 @@ const NavBar = () => {
         <div className={styles['nav-cart']}>
            <Link>
              <div className={styles['nav-cart-count-container']}>
-                <span>0</span>
+                <span>{count}</span>
                 <div>
                 <HiOutlineShoppingCart size={30}/>
                 </div>

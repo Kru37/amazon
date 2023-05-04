@@ -21,8 +21,7 @@ const MainContent = () => {
                  price = {data.price}
                  thumbnail = {data.thumbnail}
                  title = {data.title}
-                 review = {data.review }
-                 rating = {data.rating}
+                 reviews = {data.reviews}
                  />
             ) 
            })}

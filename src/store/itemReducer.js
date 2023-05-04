@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { json } from "react-router-dom";
-
+const secretKey = import.meta.env.SECRET_KEY;
 const initialState = {
   items: [],
   currentItem: {},
@@ -25,8 +25,7 @@ export const getItems = (item = 'xbox') => {
         {
           method: "GET",
           headers: {
-            "X-RapidAPI-Key":
-              "856e8b6e23msh54eaaaea3413e49p12afc8jsn82bf1e94a7cc",
+            "X-RapidAPI-Key":{secretKey},
             "X-RapidAPI-Host": "amazon23.p.rapidapi.com",
           },
         }

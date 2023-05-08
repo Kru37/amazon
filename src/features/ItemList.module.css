@@ -1,11 +1,13 @@
 .cardLinkContainer {
  display: flex;
  flex-direction: column;
- padding: 20;
+ padding: 20px;
+ height: 100%;
 }
 .cardLinkContainer img{
     height: 60%;
 object-fit: cover;
+
 }
 .rating{
     display: flex;

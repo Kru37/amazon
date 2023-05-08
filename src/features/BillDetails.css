@@ -1,0 +1,108 @@
+.item_info{
+    display: flex;
+ justify-content: space-between;
+    align-items: center;
+font-family: 'Cantata One', serif;
+}
+.item_info img{
+    width: 40%;
+  
+}
+.item_info .item_img{
+    max-width: 350;
+}
+.bill_details{
+    background-color: #fff;
+    padding: 40px;
+}
+.item_border_check{
+    padding: 20px ;
+    border-top: 2px solid rgb(201, 201, 201);
+        border-bottom: 2px solid rgb(201, 201, 201);
+    margin: 20px auto;
+}
+.cross{
+    align-self: flex-start;
+}
+.item_info h2{
+    font-size: 1.5rem;
+    
+}
+.singleitem_info{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.sub_total{
+   float: right;
+    display: flex;
+    align-items: center;
+}
+.sub_total h3{
+    font-size: 1.4rem;
+    padding: 10px;
+}
+.sub_total .price_style{
+    margin-left: 10px;
+    
+}
+.item_info .quantity_display h2{
+    font-size: 1rem;
+}
+.quantity_control{
+    display: flex;
+    align-items: baseline;
+}
+.quantity_control button{
+   width: 26px;
+   height: auto;
+}
+.quantity_display{
+    width: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:870px){
+    .singleitem_info h2{
+        font-size: 1.3rem;
+        margin-bottom: 0.4em;
+    }
+    .cross{
+        font-size: 1rem;
+    }
+    .amount{
+        font-size: 1.3rem;
+       
+    }
+    .amount_style{
+        margin-bottom: 0.4em;
+    }
+}
+@media(max-width:670px){
+    .item_info img{
+       width: 80%;
+    }
+    .singleitem_info h2{
+      text-align: center;
+      font-size: 1rem;
+    }
+        .amount{
+            font-size: 1rem;
+        }
+                .cross{
+                    font-size: 0.8rem;
+                    margin-left: 0.1em;
+                }
+        .sub_total{
+            text-align: center;
+               margin-left: auto;
+               margin-right: auto;
+        }
+}
+@media(max-width:540px){
+    .bill_details{
+        padding: 10px;
+    }
+}

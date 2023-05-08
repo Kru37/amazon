@@ -3,14 +3,17 @@ import { json, useLoaderData } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import styles from './SingleProduct.module.css'
 import { cartActions } from '../store/cartReducer'
+const secretKey = import.meta.env.VITE_API_KEY;
 const SingleProduct = () => {
   const singledata = useLoaderData()
+  console.log(singledata)
   const disptach = useDispatch()
   const handleCartAdd = () => {
+
     const item = {
       id: singledata.asin,
       img:singledata.main_image,
-      price: +singledata.current_price,
+      price: +singledata.price.current_price,
       title: singledata.title
     }
     disptach(cartActions.additem(item))
@@ -33,12 +36,21 @@ const SingleProduct = () => {
 
 export default SingleProduct
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const loader = async({params}) => {
-  const response = await fetch(`https://amazon23.p.rapidapi.com/product-details?asin=${params.id}&country=US`)
+
+  const response = await fetch(`https://amazon23.p.rapidapi.com/product-details?asin=${params.id}&country=IN` ,    {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key":secretKey,
+      "X-RapidAPI-Host": "amazon23.p.rapidapi.com",
+    },
+  })
   if(!response.ok){
      throw json({message:'something went wrong'},{status:500})
   }else{
     const resData = await response.json()
+    console.log(resData , 'res')
     return resData.result[0]
   }
 }

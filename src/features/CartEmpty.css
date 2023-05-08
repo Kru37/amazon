@@ -1,0 +1,39 @@
+.empty_cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.empty_message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:1em auto;
+}
+.empty_message img{
+    margin-right: 1em;
+}
+.empty_message h3{
+    color: black;
+    opacity: 0.7;
+}
+.backbtn{
+    padding: 0.5em 2em;
+    background-color: #6f3c2f;
+    border: none;
+    border-radius: 7px;
+    font-size: 1rem;
+    color: #fff;
+    box-shadow: 2px 4px 7px rgba(0,0,0,0.5);
+    position: relative;
+
+}
+.backbtn:active{
+
+    transform: scale(0.95);
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.5);
+}
+.backbtn:hover{
+    filter: brightness(120%);
+}
